@@ -5,5 +5,5 @@ for i in range(0, 10):
         if i == 8:
             print("89")
         else:
-            print("{}{}".format(i,j), end = ', ')
+            print("{}{}".format(i, j), end=', ')
         j += 1
