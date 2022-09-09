@@ -6,7 +6,7 @@ if __name__ == "__main__":
         
     n = len(sys.argv)
 
-    if n != 3:
+    if n != 4:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
         sys.exit(1)
 
@@ -22,5 +22,5 @@ if __name__ == "__main__":
             print("{} {} {} = {}".format(a, sys.argv[2], b, sub(a, b)))
         elif sys.argv[2] == '*':
             print("{} {} {} = {}".format(a, sys.argv[2], b, mul(a, b)))
-        elif sys.argv[2] == '/':
+        else:
             print("{} {} {} = {}".format(a, sys.argv[2], b, div(a, b)))
