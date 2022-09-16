@@ -3,7 +3,7 @@
 
 
 def roman_to_int(roman_string):
-    if roman_string == None and roman_string is not str:
+    if roman_string == None and isinstance(roman_string, str):
         return 0
     
     dic = {
