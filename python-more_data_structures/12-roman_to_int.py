@@ -18,9 +18,7 @@ def roman_to_int(roman_string):
     decimal = 0
     
     for i in range(len(roman_string)):
-        condition1 = i + 1 < len(roman_string)
-        condition2 = dic[roman_string[i]] < dic[roman_string[i+1]]
-        if condition1 and condition2:
+        if i + 1 < len(roman_string) and dic[roman_string[i]] < dic[roman_string[i+1]]:
             decimal -= dic[roman_string[i]]
         else:
             decimal += dic[roman_string[i]]
