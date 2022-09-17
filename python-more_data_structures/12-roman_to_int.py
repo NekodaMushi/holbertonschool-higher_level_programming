@@ -16,10 +16,10 @@ def roman_to_int(roman_string):
         "M": 1000
     }
     decimal = 0
-    condition1 = i + 1 < len(roman_string)
-    condition2 = dic[roman_string[i]] < dic[roman_string[i+1]]
     
     for i in range(len(roman_string)):
+        condition1 = i + 1 < len(roman_string)
+        condition2 = dic[roman_string[i]] < dic[roman_string[i+1]]
         if condition1 and condition2:
             decimal -= dic[roman_string[i]]
         else:
