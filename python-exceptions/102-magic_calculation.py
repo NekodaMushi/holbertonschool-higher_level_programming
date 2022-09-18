@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from logging import exception
-
-
 def magic_calculation(a, b):
     result = 0
     for i in range(1, 3):
