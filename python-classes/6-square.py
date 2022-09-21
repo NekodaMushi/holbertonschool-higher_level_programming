@@ -5,7 +5,7 @@
 class Square:
     """Square Class"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Init a square
         Args:
@@ -13,6 +13,7 @@ class Square:
         Return: None
         """
         self.__size = size
+        self.position = position
 
     @property
     def size(self):
@@ -47,18 +48,31 @@ class Square:
         """
         return int(self.__size ** 2)
 
+
+    @property
+    def position(self):
+        """Get position
+        Returns: The position of square"""
+
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """Position of the square to the space"""
+        if isinstance(value, tuple) and len(value) == 2 and\
+        type(value[0]) is int and value[0] >= 0 and \
+        type(value[1]) is int and value[1] >= 0:
+            self.__position = value
+
     def my_print(self):
-        """
-        Print in stdout
-        Returns: Square with #
-        """
+        """Print Square
+        Returns : Nothing"""
+
         if self.__size == 0:
             print()
-        for i in range(self.__size):
-            if i == self.position[1]:
+        else:
+            for i in range(self.position[1]):
                 print()
-            for j in range(self.__size):
-                if j == self.position[0]:
-                    print(" ", end="")
-                print('#', end="")
-            print()
+            for i in range(self.__size):
+                print("".join([" " for k in range(self.position[0])]), end="")
+                print("".join(["#" for l in range(self.__size)]))
