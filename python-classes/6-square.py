@@ -48,7 +48,6 @@ class Square:
         """
         return int(self.__size ** 2)
 
-
     @property
     def position(self):
         """Get position
@@ -59,9 +58,10 @@ class Square:
     @position.setter
     def position(self, value):
         """Position of the square to the space"""
+
         if isinstance(value, tuple) and len(value) == 2 and\
-        type(value[0]) is int and value[0] >= 0 and \
-        type(value[1]) is int and value[1] >= 0:
+            type(value[0]) is int and value[0] >= 0 and \
+                type(value[1]) is int and value[1] >= 0:
             self.__position = value
 
     def my_print(self):
@@ -75,4 +75,4 @@ class Square:
                 print()
             for i in range(self.__size):
                 print("".join([" " for k in range(self.position[0])]), end="")
-                print("".join(["#" for l in range(self.__size)]))
+                print("".join(["#" for h in range(self.__size)]))
