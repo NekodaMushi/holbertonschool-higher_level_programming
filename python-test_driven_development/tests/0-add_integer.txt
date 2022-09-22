@@ -66,7 +66,7 @@ Float type
         ...
     NameError: name 'Holbies' is not defined
 
-    >>> add_integer(float('inf')+1.222332)
+    >>> add_integer(float('inf'), 1.222332)
     Traceback (most recent call last):
         ...
     OverflowError: cannot convert float infinity to integer
@@ -76,7 +76,12 @@ Float type
         ...
     TypeError: a must be an integer
 
-    >>> add_integer('a' + 'b')
+    >>> add_integer('a', 'b')
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+    >>> add_integer(float('Nan'), 7)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
