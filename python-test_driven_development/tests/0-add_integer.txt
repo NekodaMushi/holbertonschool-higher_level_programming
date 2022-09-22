@@ -85,3 +85,12 @@ Float type
     Traceback (most recent call last):
         ...
     ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(None, -6.6666666666666666666)
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
