@@ -29,6 +29,9 @@ Int type
     >>> add_integer(33,-56)
     -23
 
+    >>> add_integer(9)
+    107
+
 
 Float type
 ................
@@ -95,3 +98,4 @@ Float type
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
