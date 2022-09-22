@@ -66,4 +66,12 @@ Float type
         ...
     NameError: name 'Holbies' is not defined
 
+    >>> add_integer(float('inf')+1.222332)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
 
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
