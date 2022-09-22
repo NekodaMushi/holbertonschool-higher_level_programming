@@ -87,6 +87,7 @@ Float type
     ValueError: cannot convert float NaN to integer
 
     >>> add_integer(None, -6.6666666666666666666)
+    Traceback (most recent call last):
         ...
     TypeError: a must be an integer
 
