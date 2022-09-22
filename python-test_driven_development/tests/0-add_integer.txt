@@ -45,8 +45,6 @@ Float type
     >>> add_integer(-4.2, -7.1)
     -11
 
-    >>> add_integer(111.543, -32.12654)
-    79 
 
 
 ===============
@@ -68,8 +66,4 @@ Float type
         ...
     NameError: name 'Holbies' is not defined
 
-    >>> add_integer(None)
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
 

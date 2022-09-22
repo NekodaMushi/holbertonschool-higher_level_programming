@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-
+"""Function checker"""
 
 def add_integer(a, b=98):
     """ Function checking if variables
     are integers or floats
-    
+
     Casting variable to integers if they are float
-    
+
     Returns an integer:
     Addition of a and b"""
 
