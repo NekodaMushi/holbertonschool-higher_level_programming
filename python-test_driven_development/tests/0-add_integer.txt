@@ -75,3 +75,8 @@ Float type
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+    >>> add_integer('a' + 'b')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
