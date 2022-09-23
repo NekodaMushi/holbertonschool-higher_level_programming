@@ -37,9 +37,4 @@ Typical Test |
     >>> say_my_name(4, "Nehemie")
     Traceback (most recent call last):
         ...
-    TypeError: exceptions must derive from BaseException
-
-    >>> say_my_name(4, "Nehemie")
-    Traceback (most recent call last):
-        ...
     TypeError: first_name must be a string
