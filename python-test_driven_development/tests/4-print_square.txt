@@ -1,48 +1,63 @@
-####################
-## 4-print_square ##
-####################
+The text test of print_square
+-------------------------------
 
-Verify import:
--------------
->>> print_square = __import__('4-print_square').print_square
+Using ''print_square''
 
-___________________________________________________________
-Verify if size is int:
----------------------------------------------
->>> print_square(4)
-####
-####
-####
-####
+===============================
 
-___________________________________________________________
-Verify if size is less than 0:
--------------------------------------
->>> print_square(-1)
-Traceback (most recent call last):
-    ...
-ValueError: size must be >= 0
+    >>> print_square = __import__('4-print_square').print_square
 
-___________________________________________________________
-Verify if size is float:
------------------------
->>> print_square(4.0)
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
+==============
+Typical Test |
+==============
 
-___________________________________________________________
-Verify if size is string:
-------------------------
->>> print_square("Python")
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
+    >>> print_square(2)
+    ##
+    ##
 
-___________________________________________________________
-Verify if size is less than 0 and is float:
-------------------------------------------
->>> print_square(-4.0)
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
+    >>> print_square(6)
+    ######
+    ######
+    ######
+    ######
+    ######
+    ######
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(0)
+
+===============
+   Error Type |
+===============
+
+    >>> print_square(2.4)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+    >>> print_square(-5.44)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square(-5)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+    >>> print_square("hello")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
