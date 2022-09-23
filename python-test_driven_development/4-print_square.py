@@ -2,7 +2,7 @@
 """Prints a Square"""
 
 
-def print_square(size):
+def print_square(size=None):
     """ Function checking if size is a integer
 
     Raises exception if:
@@ -14,6 +14,7 @@ def print_square(size):
     Print Square using '#'
 
     Returns: Nothing """
+
 
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
