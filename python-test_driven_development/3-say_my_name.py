@@ -12,8 +12,8 @@ def say_my_name(first_name, last_name=""):
 
     Returns: Nothing """
 
-    if type(first_name) is not str:
+    if not isinstance(first_name, str):
         raise("first_name must be a string")
-    if type(last_name) is not str:
+    if not isinstance(last_name, str):
         raise("last_name must be a string")
     print("My name is {} {}".format(first_name, last_name))
