@@ -4,15 +4,15 @@
 
 def print_square(size):
     """ Function checking if size is a integer
-    
+
     Raises exception if:
     not a integer
     value is less than 0
     size is a float
-    
-    
+
+
     Print Square using '#'
-    
+
     Returns: Nothing """
 
     if type(size) is not int:
