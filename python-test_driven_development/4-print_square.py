@@ -2,7 +2,7 @@
 """Prints a Square"""
 
 
-def print_square(size=10):
+def print_square(size):
     """ Function checking if size is a integer
 
     Raises exception if:
