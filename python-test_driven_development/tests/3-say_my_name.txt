@@ -38,3 +38,10 @@ Typical Test |
     Traceback (most recent call last):
         ...
     TypeError: exceptions must derive from BaseException
+
+    >>> print_square(-5.44)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    
