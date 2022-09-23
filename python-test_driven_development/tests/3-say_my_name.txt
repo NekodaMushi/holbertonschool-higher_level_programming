@@ -1,0 +1,25 @@
+The text test of add_integer
+-------------------------------
+
+Using ''say_my_name''
+
+===============================
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+==============
+Typical Test |
+==============
+
+>>> say_my_name("Edouard", "NewGate")
+My name is Edouard NewGate
+
+>>> say_my_name("EPI", "phanie")
+My name is EPI phanie
+
+>>> say_my_name("1", "Douglas")
+My name is 1 Douglas
+
+>>> say_my_name("Antony", "3")
+My name is Antony 3
+
