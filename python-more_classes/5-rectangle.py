@@ -105,4 +105,3 @@ class Rectangle:
         """method deleting rectangle"""
 
         print("Bye rectangle...")
-
