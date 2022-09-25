@@ -11,25 +11,15 @@ Using ''text_indentation''
 Typical Test |
 ==============
 
-    >>> str = "To laugh often? and Much! to win the respect: of honest people"
+    >>> str = "regular?test:should be passed once and while."
     >>> text_indentation(str)
-    To laugh often?
+    regular?
 
-    and Much! to win the respect:
+    test:
 
-    >>> str = "To laugh often? ? and Much. . to win the respect: of honest people"
-    >>> text_indentation(str)
-    To laugh often?
+    should be passed once and while.
 
-    ?
-
-    and Much.
-
-    .
-
-    to win the respect:
-
-    of honest people>>> 
+    >>> 
 
 
 ===============
@@ -39,10 +29,10 @@ Typical Test |
     >>> str = 123
     >>> text_indentation(str)
     Traceback (most recent call last):
-        ...
+    ...
     TypeError: text must be a string
 
     >>> text_indentation()
     Traceback (most recent call last):
-        ...
+    ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
