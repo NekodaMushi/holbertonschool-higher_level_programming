@@ -18,7 +18,7 @@ Typical Test |
 
     >>> matrix = [[6, 15, 45], [60, 12, 36]]
     >>> matrix_divided(matrix, 3)
-    [[2.0, 5.0, 15.0], [20.0, 4.0, 12.0]]  
+    [[2.0, 5.0, 15.0], [20.0, 4.0, 12.0]]
 
     >>> matrix = [[6, 11, 32], [10, 12, 44]]
     >>> matrix_divided(matrix, -2)
@@ -26,17 +26,17 @@ Typical Test |
 
 
     >>> matrix = [[6, 11, 32], [10, 12, 44]]
-	>>> matrix_divided(matrix, float('inf'))
-	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 ===============
    Error Type |
 ===============
 
     >>> matrix_divided(matrix)
-	Traceback (most recent call last):
-	    ...
-	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
     >>> matrix = [[4, 4], [7, 1, 4]]
     >>> matrix_divided(matrix, 3)
@@ -49,11 +49,11 @@ Typical Test |
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-	>>> matrix = [[10, 15, 20], [20, 25, 26]]
-	>>> matrix_divided(matrix, "Thor")
-	Traceback (most recent call last):
-	    ...
-	TypeError: div must be a number
+    >>> matrix = [[10, 15, 20], [20, 25, 26]]
+    >>> matrix_divided(matrix, "Thor")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
 
     >>> matrix = [[10, 15, 20], [20, 25, 26]]
     >>> matrix_divided(matrix, 0)
@@ -61,8 +61,8 @@ Typical Test |
         ...
     ZeroDivisionError: division by zero
 
-	>>> matrix = [["gouch", "Sire", "None"], [None, "Couli", "Flambi"]]
-	>>> matrix_divided(matrix, 8)
-	Traceback (most recent call last):
-	    ...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix = [["gouch", "Sire", "None"], [None, "Couli", "Flambi"]]
+    >>> matrix_divided(matrix, 8)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
