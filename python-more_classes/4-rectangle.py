@@ -91,7 +91,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         for char in range(self.__height):
-                string += '#' * self.__width + "\n"
+            string += '#' * self.__width + "\n"
 
         return string[:-1]
 
