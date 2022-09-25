@@ -1,0 +1,48 @@
+The text test of text_indentation
+-------------------------------
+
+Using ''text_indentation''
+
+===============================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+==============
+Typical Test |
+==============
+
+    >>> str = "To laugh often? and Much! to win the respect: of honest people"
+    >>> text_indentation(str)
+    To laugh often?
+
+    and Much! to win the respect:
+
+    >>> str = "To laugh often? ? and Much. . to win the respect: of honest people"
+    >>> text_indentation(str)
+    To laugh often?
+
+    ?
+
+    and Much.
+
+    .
+
+    to win the respect:
+
+    of honest people>>> 
+
+
+===============
+   Error Type |
+===============
+
+    >>> str = 123
+    >>> text_indentation(str)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
