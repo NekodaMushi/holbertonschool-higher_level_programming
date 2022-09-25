@@ -123,6 +123,7 @@ class Rectangle:
         else:
             return rect_2
 
+    @classmethod
     def square(cls, size=0):
         """Returns a new Rectangle instance
         with width == height == size"""
