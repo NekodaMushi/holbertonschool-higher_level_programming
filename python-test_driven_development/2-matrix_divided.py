@@ -13,11 +13,11 @@ def matrix_divided(matrix, div):
     """
     Divide a matrix by 3, and create a new one to stock the result
     Args:
-    
+
         matrix (list of list of int): Given matrix
         div (int or float): Denominator
     Raises:
-    
+
         TypeError: If div is not a num
         TypeError: If row of matrix is not the same size
         TypeError: If matrix is not a list of list of int or float
@@ -39,7 +39,7 @@ integers/floats')
         raise ZeroDivisionError('division by zero')
 
     sizeRow = len(matrix[0])
-    
+
     for row in range(len(matrix)):
         if len(matrix[row]) != sizeRow:
             raise TypeError('Each row of the matrix must have the same size')
