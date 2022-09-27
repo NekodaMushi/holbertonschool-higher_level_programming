@@ -1,8 +1,8 @@
-#!/env/bin/python3
+#!/usr/bin/python3
 """First time creating class which inherits"""
 
 
-class Mylist(list):
+class MyList(list):
     """Class Inheriting from list"""
 
     def print_sorted(self):

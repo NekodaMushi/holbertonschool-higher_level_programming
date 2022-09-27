@@ -1,0 +1,133 @@
+The text test of MyList
+-------------------------------
+
+Using ''MyList''
+
+===============================
+
+>>> MyList = __import__('1-my_list').MyList
+
+--------------
+
+Object Created
+
+--------------
+
+>>> my_list = MyList()
+
+
+
+
+==============
+Typical Test |
+==============
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.append(55)
+>>> print(my_list)
+[55]
+>>> my_list.print_sorted()
+[55]
+
+>>> my_list.append(2)
+>>> my_list.append(9)
+>>> my_list.append(4)
+>>> my_list.append(55)
+>>> print(my_list)
+[2, 9, 4, 55]
+>>> my_list.print_sorted()
+[2, 4, 9, 55]
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.append(55)
+>>> my_list.append(552)
+>>> my_list.append(12)
+>>> my_list.append(3)
+>>> my_list.append(6)
+>>> my_list.append(4342)
+>>> my_list.append(43321)
+>>> my_list.append(123)
+>>> my_list.append(5454)
+>>> my_list.append(43)
+>>> my_list.append(875)
+>>> my_list.append(8754343)
+>>> print(my_list)
+[55, 552, 12, 3, 6, 4342, 43321, 123, 5454, 43, 875, 8754343]
+>>> my_list.print_sorted()
+[3, 6, 12, 43, 55, 123, 552, 875, 4342, 5454, 43321, 8754343]
+
+>>> my_list = MyList()
+>>> my_list.append(55)
+>>> my_list.append(552)
+>>> my_list.append(12)
+>>> my_list.append(3)
+>>> my_list.append(6)
+>>> my_list.append(4342)
+>>> my_list.append(43321)
+>>> my_list.append(123)
+>>> my_list.append(5454)
+>>> my_list.append(43)
+>>> my_list.append(875)
+>>> my_list.append(8754343)
+>>> print(my_list)
+[55, 552, 12, 3, 6, 4342, 43321, 123, 5454, 43, 875, 8754343]
+>>> my_list.print_sorted()
+[3, 6, 12, 43, 55, 123, 552, 875, 4342, 5454, 43321, 8754343]
+
+>>> my_list = MyList()
+>>> my_list.append(None)
+>>> my_list.print_sorted()
+[None]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(6)
+>>> my_list.append(3)
+>>> my_list.append(True)
+>>> print(my_list)
+[1, 6, 3, True]
+>>> my_list.append(24)
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 1, True, 3, 6, 24]
+
+===============
+   Error Type |
+===============
+
+>>> my_list = MyList()
+>>> my_list.append(rer)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'rer' is not defined
+
+>>> my_list = MyList()
+>>> my_list.append(43)
+>>> my_list.append(ter)
+Traceback (most recent call last):
+...
+NameError: name 'ter' is not defined
+
+>>> my_list = MyList()
+>>> my_list.append(None)
+>>> my_list.append(3)
+>>> my_list.append(7)
+>>> my_list.append(2)
+>>> my_list.append(4)
+>>> my_list.append(1)
+>>> my_list.append(123)
+>>> my_list.append(14)
+>>> my_list.append(None)
+>>> print(my_list)
+[None, 3, 7, 2, 4, 1, 123, 14, None]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'int' and 'NoneType'
+
