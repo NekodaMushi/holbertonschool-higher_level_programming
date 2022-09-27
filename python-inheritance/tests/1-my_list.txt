@@ -36,6 +36,7 @@ Typical Test |
 >>> my_list.print_sorted()
 [55]
 
+>>> my_list = MyList()
 >>> my_list.append(2)
 >>> my_list.append(9)
 >>> my_list.append(4)
@@ -43,6 +44,7 @@ Typical Test |
 >>> print(my_list)
 [2, 9, 4, 55]
 
+>>> my_list = MyList()
 >>> my_list.append(2)
 >>> my_list.append(9)
 >>> my_list.append(4)
