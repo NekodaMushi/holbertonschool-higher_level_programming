@@ -5,6 +5,7 @@
 class BaseGeometry:
     """Mother class for Geometric Object"""
 
+
     def area(self):
         """Raises Exception"""
         raise Exception("area() is not implemented")
@@ -19,3 +20,22 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
+class Rectangle(BaseGeometry):
+    """Daughter of BaseGeometry
+    Type: Rectangle
+    """
+
+
+    def __init__(self, width, height):
+        """
+        Init a Rectangle
+        Args:
+            width: width of Rectangle
+            height: height of Rectangle
+        Return: None
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width= width
+        self.__height= height
