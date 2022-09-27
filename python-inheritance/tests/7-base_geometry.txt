@@ -22,11 +22,12 @@ bg = BaseGeometry()
 Typical Test |
 ==============
 
->>> bg.integer_validator("john", 12)
+>>> bg.integer_validator('john', 11)
 
 >>> bg.integer_validator('square', 25)
 
 >>> bg.integer_validator('size', 10000000000000)
+
 
 
 
