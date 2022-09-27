@@ -30,6 +30,8 @@ Typical Test |
 
 >>> bg.integer_validator('checkerIsAlwaysRight', True)
 
+>>> bg.integer_validator("age", True)
+
 
 ===============
    Error Type |
@@ -84,3 +86,8 @@ TypeError: checkerIsAlwaysRight must be an integer
 Traceback (most recent call last):
 ...
 TypeError: checkerIsAlwaysRight must be an integer
+
+>>> bg.integer_validator("age", False)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
