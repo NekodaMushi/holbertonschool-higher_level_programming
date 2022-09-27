@@ -3,4 +3,5 @@
 
 
 class BaseGeometry:
+    """Mother class for Geometric Object"""
     pass
