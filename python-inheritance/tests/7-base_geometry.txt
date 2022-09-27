@@ -28,12 +28,17 @@ Typical Test |
 
 >>> bg.integer_validator('size', 10000000000000)
 
-
+>>> bg.integer_validator('checkerIsAlwaysRight', True)
 
 
 ===============
    Error Type |
 ===============
+
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
 
 >>> bg.integer_validator(23, 'size')
 Traceback (most recent call last):
@@ -59,3 +64,23 @@ ValueError: size must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: size must be an integer
+
+>>> bg.integer_validator('john', 0)
+Traceback (most recent call last):
+...
+ValueError: john must be greater than 0
+
+>>> bg.integer_validator('john', (2,))
+Traceback (most recent call last):
+...
+TypeError: john must be an integer
+
+>>> bg.integer_validator('checkerIsAlwaysRight', [2])
+Traceback (most recent call last):
+...
+TypeError: checkerIsAlwaysRight must be an integer
+
+>>> bg.integer_validator('checkerIsAlwaysRight', None)
+Traceback (most recent call last):
+...
+TypeError: checkerIsAlwaysRight must be an integer
