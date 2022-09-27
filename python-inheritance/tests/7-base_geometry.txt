@@ -8,21 +8,25 @@ Using ''BaseGeometry''
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 --------------
-Object created
-    for test
+
+Object Created
+
 --------------
 
-ob = BaseGeometry()
+bg = BaseGeometry()
+
+
+
 
 ==============
 Typical Test |
 ==============
 
->>> ob.integer_validator("john", 12)
+>>> bg.integer_validator("john", 12)
 
->>> ob.integer_validator('square', 25)
+>>> bg.integer_validator('square', 25)
 
->>> ob.integer_validator('size', 10000000000000)
+>>> bg.integer_validator('size', 10000000000000)
 
 
 
@@ -30,27 +34,27 @@ Typical Test |
    Error Type |
 ===============
 
->>> ob.integer_validator(23, 'size')
+>>> bg.integer_validator(23, 'size')
 Traceback (most recent call last):
 ...
 TypeError: 23 must be an integer
 
->>> ob.integer_validator(23, 'size', 12)
+>>> bg.integer_validator(23, 'size', 12)
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
->>> ob.integer_validator('size', 1, 12)
+>>> bg.integer_validator('size', 1, 12)
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
->>> ob.integer_validator('size', -1)
+>>> bg.integer_validator('size', -1)
 Traceback (most recent call last):
 ...
 ValueError: size must be greater than 0
 
->>> ob.integer_validator('size', 'height')
+>>> bg.integer_validator('size', 'height')
 Traceback (most recent call last):
 ...
 TypeError: size must be an integer
