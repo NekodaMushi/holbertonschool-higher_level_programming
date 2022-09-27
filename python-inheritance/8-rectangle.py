@@ -4,9 +4,9 @@
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class BaseGeometry:
     """Mother class for Geometric Object"""
-
 
     def area(self):
         """Raises Exception"""
@@ -28,7 +28,6 @@ class Rectangle(BaseGeometry):
     Type: Rectangle
     """
 
-
     def __init__(self, width, height):
         """
         Init a Rectangle
@@ -39,5 +38,5 @@ class Rectangle(BaseGeometry):
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
-        self.__width= width
-        self.__height= height
+        self.__width = width
+        self.__height = height
