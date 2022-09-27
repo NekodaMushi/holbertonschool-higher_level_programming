@@ -13,7 +13,7 @@ Object Created
 
 --------------
 
-bg = BaseGeometry()
+>>> bg = BaseGeometry()
 
 
 
