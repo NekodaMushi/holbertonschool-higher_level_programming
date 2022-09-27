@@ -6,5 +6,5 @@ class BaseGeometry:
     """Mother class for Geometric Object"""
 
     def area(self):
-        """Raise exception"""
+        """Raises Exception"""
     raise Exception("area() is not implemented")
