@@ -3,6 +3,7 @@
 
 
 def read_file(filename=""):
-    """Open file and display content into STDout"""
     with open(filename, 'r', encoding="utf-8" ) as file:
-        print(file.read())
+        file = file.read()
+        for fi in file:
+            print(fi, end="")
