@@ -5,7 +5,7 @@
 class Student:
     """Student class
     Type Humanoide
-    Attributes : 
+    Attributes :
     First Name
     Last Name
     Age

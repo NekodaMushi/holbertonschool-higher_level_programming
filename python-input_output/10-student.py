@@ -5,7 +5,7 @@
 class Student:
     """Student class
     Type Humanoide
-    Attributes : 
+    Attributes :
     First Name
     Last Name
     Age
@@ -28,4 +28,3 @@ class Student:
                     lis[attribut] = getattr(self, attribut)
             return lis
         return vars(self)
-
