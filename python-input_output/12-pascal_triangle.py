@@ -13,7 +13,7 @@ def pascal_triangle(n):
         empty list if n <= 0
         Pascals triangle of n
     """
-    n = 5
+
     triangle = []
 
     for i in range(n):
