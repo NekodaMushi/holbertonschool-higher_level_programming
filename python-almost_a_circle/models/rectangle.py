@@ -100,4 +100,4 @@ class Rectangle(Base):
         """Prints in stdout Rectangle
         instance with the character '#'
         """
-        print((self.width * '#' + '\n') * self.width, end="")
+        print('\n'.join((self.__width * '#') for i in range(self.__height)))
