@@ -22,7 +22,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-
     @property
     def width(self):
         """Getter of width"""
@@ -43,7 +42,6 @@ class Rectangle(Base):
         """Getter of y"""
         return self.__y
 
-
     @height.setter
     def height(self, value):
         """Defining height of Rectangle
@@ -52,7 +50,7 @@ class Rectangle(Base):
         Returning error if so"""
         self.valid_attribs("height", value)
         self.__height = value
-        
+
     @width.setter
     def width(self, value):
         """Defining width of Rectangle
