@@ -100,7 +100,14 @@ class Rectangle(Base):
         """Prints in stdout Rectangle
         instance with the character '#'
         """
-        print('\n'.join((self.__width * '#') for i in range(self.__height)))
+        for y in range(self.__y):
+            print()
+        for h in range(self.__height):
+            for x in range(self.__x):
+                print(' ', end="")
+            for w in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """Return string representation of object"""
