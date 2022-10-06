@@ -39,5 +39,16 @@ class Base:
     def from_json_string(json_string):
         """Returns the list of the JSON string representation"""
         if json_string is None:
-            json_string = []
+            empty_list = []
+            return empty_list
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1,1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
