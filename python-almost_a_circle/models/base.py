@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Second file: Base Class """
 import json
+import csv
 
 
 class Base:
@@ -44,11 +45,14 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def create(cls, **dictionary):
-        """returns an instance with all attributes"""
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        if cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+    def save_to_file_csv(cls, list_objs):
+
+        rect= [idxself.id, idxself.width, idxself.height, idxself.x, idxself.y]
+        sqre= [idxself.id, idxself.size, idxself.x, idxself.y]
+        with open(cls.__name__+".csv", "w") as fp:
+            writer = csv.writer(fp)
+            for idxself in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerows(rect)
+                if cls.__name__ == "Square":
+                    writer.writerows(sqre)
