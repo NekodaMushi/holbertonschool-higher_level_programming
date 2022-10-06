@@ -35,3 +35,9 @@ class Base:
 
         with open(cls.__name__+".json", "w",) as f:
             f.write(cls.to_json_string(output_dict))
+
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation"""
+        if json_string is None:
+            json_string = []
+        return json.loads(json_string)
