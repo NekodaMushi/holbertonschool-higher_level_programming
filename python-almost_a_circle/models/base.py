@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Second file: Base Class """
+from genericpath import exists
 import json
 import csv
 
@@ -44,15 +45,73 @@ class Base:
             return empty_list
         return json.loads(json_string)
 
+    def create(cls, **dictionary):
+        """returns an instance with all attributes"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1,1)
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        list_instance = []
+        if exists(filename):
+            with open(filename, "r+") as fd:
+                list_json = cls.from_json_string(fd.read())
+                for item in list_json:
+                    list_instance.append(cls.create(**item))
+        return list_instance
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
 
-        rect= [idxself.id, idxself.width, idxself.height, idxself.x, idxself.y]
-        sqre= [idxself.id, idxself.size, idxself.x, idxself.y]
+        from models.rectangle import Rectangle
+        from models.square import Square
+
         with open(cls.__name__+".csv", "w") as fp:
             writer = csv.writer(fp)
             for idxself in list_objs:
-                if cls.__name__ == "Rectangle":
-                    writer.writerows(rect)
-                if cls.__name__ == "Square":
-                    writer.writerows(sqre)
+                if cls.__name__ == Rectangle:
+                    writer.writerow(Rectangle)
+                if cls.__name__ == Square:
+                    writer.writerow(Square)
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Load instance from csv file
+        Args:
+        Returns: A list of all instances
+        """
+        filename = cls.__name__ + ".csv"
+        listOfObjs = []
+        try:
+            with open(filename, "r") as f:
+                reader = csv.reader(f)
+                for elem in reader:
+                    if cls.__name__ == "Rectangle":
+                        newObj = {
+                            "id": int(elem[0]),
+                            "width": int(elem[1]),
+                            "height": int(elem[2]),
+                            "x": int(elem[3]),
+                            "y": int(elem[4]),
+                        }
+                    else:
+                        newObj = {
+                            "id": int(elem[0]),
+                            "size": int(elem[1]),
+                            "x": int(elem[2]),
+                            "y": int(elem[3]),
+                        }
+                    newObj = cls.create(**newObj)
+                    listOfObjs.append(newObj)
+            return listOfObjs
+        except FileExistsError:
+            return []
