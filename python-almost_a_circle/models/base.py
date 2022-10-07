@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Second file: Base Class """
+from fileinput import filename
 from genericpath import exists
 import json
 import csv
+from venv import create
 
 
 class Base:
@@ -48,7 +50,6 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1,1)
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
             dummy = cls(1)
@@ -59,13 +60,15 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances"""
         filename = cls.__name__ + ".json"
-        list_instance = []
-        if exists(filename):
-            with open(filename, "r+") as fd:
-                list_json = cls.from_json_string(fd.read())
-                for item in list_json:
-                    list_instance.append(cls.create(**item))
-        return list_instance
+        lsdt = []
+        try:
+            with open(filename, "r") as fp:
+                temp_list = cls.from_json_string(fp.read())
+            for i in range(len(temp_list)):
+                lsdt.append(cls.create(**temp_list[i]))
+            return lsdt
+        except FileNotFoundError:
+            return lsdt
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -75,11 +78,10 @@ class Base:
 
         with open(cls.__name__+".csv", "w") as fp:
             writer = csv.writer(fp)
-            for idxself in list_objs:
-                if cls.__name__ == Rectangle:
-                    writer.writerow(Rectangle)
-                if cls.__name__ == Square:
-                    writer.writerow(Square)
+            if cls.__name__ == Rectangle:
+                writer.writerow(Rectangle)
+            if cls.__name__ == Square:
+                writer.writerow(Square)
 
 
     @classmethod
