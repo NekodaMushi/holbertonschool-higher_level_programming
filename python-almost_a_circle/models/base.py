@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """Second file: Base Class """
-from fileinput import filename
 from genericpath import exists
 import json
 import csv
-from venv import create
 
 
 class Base:
@@ -40,6 +38,7 @@ class Base:
         with open(cls.__name__+".json", "w",) as f:
             f.write(cls.to_json_string(output_dict))
 
+    @classmethod
     def from_json_string(json_string):
         """Returns the list of the JSON string representation"""
         if json_string is None:
@@ -47,6 +46,7 @@ class Base:
             return empty_list
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes"""
         if cls.__name__ == "Rectangle":
@@ -59,7 +59,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        filename = cls.__name__ + ".json"
+        filename = cls.__name__+".json"
         lsdt = []
         try:
             with open(filename, "r") as fp:
@@ -67,7 +67,7 @@ class Base:
             for i in range(len(temp_list)):
                 lsdt.append(cls.create(**temp_list[i]))
             return lsdt
-        except FileNotFoundError:
+        except TypeError:
             return lsdt
 
     @classmethod
