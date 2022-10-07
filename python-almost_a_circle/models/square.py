@@ -15,17 +15,6 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
-    @property
-    def size(self):
-        """Getter of Square Size"""
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """Setter of Square Size"""
-        self.width = value
-        self.height = value
-
     def __str__(self):
         """String description of object"""
         return(f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
@@ -44,5 +33,5 @@ class Square(Rectangle):
             setattr(self, key, value)
 
     def to_dictionary(self):
-        """Diction rep of Square"""
+        """Dictionnary rep of Square"""
         return {'id' : self.id, 'Size' : self.size, 'x' : self.x, 'y' : self.y}
