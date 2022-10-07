@@ -28,7 +28,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """String description of object"""
-        return(f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
+        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
 
     def update(self, *args, **kwargs):
         """Assigns attributes"""
@@ -45,4 +45,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Diction rep of Square"""
-        return {'id' : self.id, 'size' : self.size, 'x' : self.x, 'y' : self.y}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
