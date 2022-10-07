@@ -38,7 +38,7 @@ class Base:
         with open(cls.__name__+".json", "w",) as f:
             f.write(cls.to_json_string(output_dict))
 
-    @classmethod
+    @staticmethod
     def from_json_string(json_string):
         """Returns the list of the JSON string representation"""
         if json_string is None:
@@ -59,16 +59,16 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        filename = cls.__name__+".json"
-        lsdt = []
+        lst = []
         try:
-            with open(filename, "r") as fp:
-                temp_list = cls.from_json_string(fp.read())
-            for i in range(len(temp_list)):
-                lsdt.append(cls.create(**temp_list[i]))
-            return lsdt
-        except TypeError:
-            return lsdt
+            with open(cls.__name__ + ".json", 'r') as f:
+                list_inst = cls.from_json_string(f.read())
+            for items in range(len(list_inst)):
+                # formatting dict in list
+                lst.append(cls.create(**list_inst[items]))
+            return lst
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -82,7 +82,6 @@ class Base:
                 writer.writerow(Rectangle)
             if cls.__name__ == Square:
                 writer.writerow(Square)
-
 
     @classmethod
     def load_from_file_csv(cls):
