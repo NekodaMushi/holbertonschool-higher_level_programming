@@ -67,52 +67,6 @@ class Base:
             for i in range(len(temp_list)):
                 lsdt.append(cls.create(**temp_list[i]))
             return lsdt
-        except TypeError:
+        except FileNotFoundError:
             return lsdt
 
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-
-        from models.rectangle import Rectangle
-        from models.square import Square
-
-        with open(cls.__name__+".csv", "w") as fp:
-            writer = csv.writer(fp)
-            if cls.__name__ == Rectangle:
-                writer.writerow(Rectangle)
-            if cls.__name__ == Square:
-                writer.writerow(Square)
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """
-        Load instance from csv file
-        Args:
-        Returns: A list of all instances
-        """
-        filename = cls.__name__ + ".csv"
-        listOfObjs = []
-        try:
-            with open(filename, "r") as f:
-                reader = csv.reader(f)
-                for elem in reader:
-                    if cls.__name__ == "Rectangle":
-                        newObj = {
-                            "id": int(elem[0]),
-                            "width": int(elem[1]),
-                            "height": int(elem[2]),
-                            "x": int(elem[3]),
-                            "y": int(elem[4]),
-                        }
-                    else:
-                        newObj = {
-                            "id": int(elem[0]),
-                            "size": int(elem[1]),
-                            "x": int(elem[2]),
-                            "y": int(elem[3]),
-                        }
-                    newObj = cls.create(**newObj)
-                    listOfObjs.append(newObj)
-            return listOfObjs
-        except FileExistsError:
-            return []
