@@ -1,0 +1,1 @@
+-- creates a table second_table and add multiples rows
