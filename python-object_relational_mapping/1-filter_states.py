@@ -3,7 +3,7 @@
 """
 Script to list all states
 from database hbtn_0e_0usa
-where name of states matches an argument of command line
+Filtering those with a name starting with upper 'N'
 """
 
 import MySQLdb
@@ -20,13 +20,10 @@ if "__main__" == __name__:
     )
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE '{:s}' \
-            ORDER BY states.id ASC".format(
-            sys.argv[4])
-    )
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
-        if row[1] == sys.argv[4]:
+        if row[1][0] == 'N':
             print(row)
     cur.close()
     db.close()
