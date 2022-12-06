@@ -1,10 +1,11 @@
 #!/usr/bin/node
 'user strict';
 const x = Number(process.argv[2]);
-if (x.isInteger) {
+if (Number.isInteger(x)) {
   for (let i = 0; i < x; i++) {
     console.log('C is fun');
   }
-} else {
+}
+else {
   console.log('Missing number of occurrences');
 }
