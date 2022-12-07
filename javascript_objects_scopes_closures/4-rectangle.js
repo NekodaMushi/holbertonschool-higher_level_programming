@@ -1,5 +1,5 @@
 #!/usr/bin/node
-'strict user';
+'use strict';
 
 module.exports = class Rectangle {
   constructor (w, h) {

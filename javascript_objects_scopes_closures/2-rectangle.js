@@ -1,5 +1,5 @@
 #!/usr/bin/node
-'user strict';
+'use strict';
 
 class Rectangle {
   constructor (w, h) {
