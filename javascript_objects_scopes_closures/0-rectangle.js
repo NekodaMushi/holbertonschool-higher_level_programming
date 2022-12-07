@@ -1,6 +1,7 @@
 #!/usr/bin/node
-'user strict'
+'user strict';
 
 class Rectangle {
 
-  }
+}
+module.exports = Rectangle;
