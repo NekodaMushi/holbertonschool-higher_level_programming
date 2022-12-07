@@ -1,10 +1,10 @@
-#!/usr/bin/node 
-'use strict'
+#!/usr/bin/node
+'use strict';
 
 exports.converter = function (base) {
-  return function(num){
+  return function (num) {
     return num.toString(base);
-}
-}
+  };
+};
 
-//return (num) => num.toString(base)
+// return (num) => num.toString(base)
