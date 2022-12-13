@@ -8,6 +8,6 @@ const endpoint = `https://swapi-api.hbtn.io/api/films/${movie}`;
 request.get(endpoint, (err, response, body) => {
   if (err) throw err;
   const data = JSON.parse(body);
-// Parse JSON response
+  // Parse JSON response
   console.log(data.title);
-})
+});
