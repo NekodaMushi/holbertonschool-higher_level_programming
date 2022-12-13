@@ -1,6 +1,11 @@
 #!/usr/bin/node
 const fs = require("fs");
-const filePath = './cisfun'
-const fileContents = fs.readFileSync(filePath, 'utf8');
+const filePath = process.argv[2];
 
-console.log(fileContents);
+fs.readFile(filePath, 'utf-8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
