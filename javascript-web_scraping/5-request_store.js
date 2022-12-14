@@ -7,14 +7,13 @@ const filePath = process.argv[3];
 
 // Make a GET request to the URL
 request(url, function (error, response, content) {
-  if(!error && response.statusCode === 200) {
+  if (!error && response.statusCode === 200) {
     fs.writeFile(filePath, content, 'utf-8', err => {
-      if (err){
+      if (err) {
         console.log(err);
       }
     });
-  }  else {
+  } else {
     console.log(error);
   }
-  });
-
+});
